@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Gymnastic</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/img/Gymnastic_logo.ico}">
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+    <div class="cabecera">
+        <div class="divs_cabecera" id="logo">
+            <a th:href="@{/index.html}"><img id="logoImg" th:src="@{/img/Gymnastic_logo.ico}" alt="Logo empresa"></a>
+            <p class="titulo">GYMNASTIC</p>
+        </div>
+        <div class="divs_cabecera" id="login">
+            <a th:href="@{/login}"><img id="loginImg" th:src="@{/img/login.ico}" alt="Login"></a>
+        </div>
+    </div>
+    <!-- MENU -->
+    <nav class="navbar">
+        <div class="opciones">
+            <a th:href="@{/index.html}">INICIO</a>
+        </div>
+        <div class="opciones">
+            <a th:href="@{/rutinas}">RUTINAS</a>
+        </div>
+        <div class="opciones">
+            <a th:href="@{/favoritas}">FAVORITAS</a>
+        </div>
+    </nav>
+    <!-- CUERPO -->
+    <div class="contenedorPrincipalRutinas">
+        <div class="cuerpoRutina">
+            <div class="rutina" th:each="rutina : ${rutinas}">
+                <div id="info">
+                    <div class="logoRutina">
+                        <img id="logoRutina" th:src="@{https://img.icons8.com/nolan/64/barbell.png}" alt="Logo rutina">
+                    </div>
+                    <div class="tituloRutina">
+                        <span th:text="${rutina.nombre}"></span>
+                    </div>
+                    <div class="checkbox-container">
+                    	<input type="checkbox" id="favorita" th:checked="${rutina.mcaFavorita}">
+                        <label for="favorita">Favorita</label>
+                    </div>
+                </div>
+                <p>Nivel: <span th:text="${rutina.nivel}"></span></p>
+                <ul>
+                    <li th:each="ejercicio : ${rutina.ejercicios}">
+                        <span th:text="${ejercicio.nombre}"></span>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    <footer class="pie">
+        Co Gymnastic <br> correo <br> hola <br> son pruebas
+    </footer>
+</body>
+</html>

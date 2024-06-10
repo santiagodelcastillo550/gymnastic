@@ -1,0 +1,4 @@
+2024-06-07 12:14:39.744936+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "USERS" no encontrada
+Table "USERS" not found; SQL statement:
+select username,password,enabled from users where username = ? [42102-224]

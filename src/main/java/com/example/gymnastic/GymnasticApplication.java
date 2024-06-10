@@ -1,0 +1,13 @@
+package com.example.gymnastic;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class GymnasticApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(GymnasticApplication.class, args);
+	}
+
+}

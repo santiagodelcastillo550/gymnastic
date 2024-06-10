@@ -1,0 +1,267 @@
+/* CABECERA PÁGINA */
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Establecer altura mínima del cuerpo de la página para ocupar toda la ventana */
+}
+.cabecera {
+    background-color: black;
+    color: orange;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.divs_cabecera {
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Ajusta el espacio entre los elementos */
+}
+
+#logo {
+    width: 90%; /* El div del logo ocupa el 70% del ancho */
+}
+
+#login {
+    width: 10%; /* El div del login ocupa el 30% del ancho */
+    display: flex; /* Usar el modelo de caja flexible */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+    align-items: center; /* Centrar verticalmente el contenido */
+}
+
+#logoImg {
+    width: 100%; /* Ajusta el ancho de la imagen según sea necesario */
+    max-width: 100px;
+    margin-right: 10px;
+}
+
+#loginImg{
+    width: 100%; /* Ajusta el ancho de la imagen según sea necesario */
+    max-width: 100px;
+    
+
+}
+.titulo {
+    margin: 0;
+    /* Elimina el margen predeterminado del párrafo */
+    font-size: 80px;
+    color: orange;
+}
+
+/*NAV BAR*/
+.navbar {
+    display: flex; /* Usa el modelo de caja flexible */
+    text-align: center; /* Centra el texto dentro de los divs */
+    border: 1px solid black; /* Añade bordes para mejor visualización */
+    background-color: black;
+    text-align: center; /* Centra el texto dentro de los divs */
+    border: 1px solid black; /* Añade bordes para mejor visualización */
+}
+
+.opciones a {
+    background-color: black; /* Color de fondo del contenedor, no de los enlaces */
+    color: orange; /* Color de la letra para los enlaces */
+    display: inline-block; /* Para que los enlaces ocupen solo el ancho del texto */
+    padding: 10px 20px; /* Ajusta según el diseño deseado */
+    text-decoration: none; /* Elimina el subrayado predeterminado en los enlaces */
+}
+
+.opciones a:hover {
+    background-color: orange; /* Cambia el color de fondo al pasar el ratón por encima */
+    color: black;
+}
+
+/*CUERPO*/
+.cuerpo {
+    display: flex;
+    height: 650px; /* Establece la altura del contenedor */
+}
+
+.cuerpo1 {
+    width: 70%; /* Ancho del primer div */
+    background-color: orange; /* Color de fondo para el primer div */
+    padding: 10px; /* Añade espacio alrededor del contenido */
+    border: 2px solid black;
+    font-size: 20px;
+}
+
+.seccion1 {
+    width: 30%; /* Ancho del segundo div */
+    background-color: orange; /* Color de fondo para el segundo div */
+    padding: 10px; /* Añade espacio alrededor del contenido */
+    border: 2px solid black;
+    font-size: 26px;
+}
+
+/*PIE*/
+.pie {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box; /* Incluir el padding y el borde en el ancho total */
+    margin-top: auto; /* Mover el pie de página al final del contenedor */
+    width: 100%;
+}
+
+/*RUTINAS*/
+/*CUERPO RUTINAS*/
+.contenedorPrincipalRutinas {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+}
+
+.cuerpoRutina {
+    width: 50%; /* Ancho del primer div */
+    background-color: orange; /* Color de fondo para el primer div */
+    padding: 10px; /* Añade espacio alrededor del contenido */
+    border: 2px solid black;
+    flex: 1 0 calc(50% - 20px); /* Ajusta el tamaño de los divs para que ocupen el 50% del contenedor */
+    margin: 7px;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y la altura del elemento */
+}
+
+/*INTERIOR CADA RUTINA*/
+.rutina{
+    background-color: blanchedalmond;
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative; /* Permite posicionar de forma absoluta dentro del div */
+}
+
+.rutina1{
+    background-color: orangered;
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative; /* Permite posicionar de forma absoluta dentro del div */
+}
+
+.rutina2{
+    background-color: red;
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative; /* Permite posicionar de forma absoluta dentro del div */
+}
+
+/*DIV DENTRO RUTINA*/
+#info {
+    display: flex; /* Usa Flexbox */
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+/*IMAGEN RUTINA*/
+.logoRutina {
+    margin-left: 2%;
+    margin-right: 5%; /* Utiliza porcentajes */
+    
+}
+
+.tituloRutina p {
+    font-size: 100%; /* Utiliza porcentajes */
+}
+
+/*CHECKBOX Y LABEL FAVORITA*/
+.checkbox-container {
+    margin-left: auto; /* Mueve el div al extremo derecho */
+    margin-right: 5%; /* Utiliza porcentajes */
+    font-size: 100%; /* Utiliza porcentajes */
+}
+
+.checkbox-container input[type="checkbox"] {
+    transform: scale(1.5); /* Cambia el valor según lo grande que quieras que sea el checkbox */
+}
+
+/*LISTA RUTINA*/
+.rutina ul , .rutina1 ul, .rutina2 ul{
+    font-size: 20px;
+    text-align: left;
+    padding-left: 0;
+    margin-left: 30%; /* Ajusta el margen izquierdo según sea necesario */
+    margin-top: 5px; /* Ajusta el margen superior según sea necesario */
+}
+
+/*INICIO SESION*/
+.cuerpoLogin {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.registro, .inicioSesion {
+    background-color: orange;
+    padding: 20px;
+    margin: 10px;
+    width: 350px; /* Ancho fijo */
+    max-width: 100%; /* Ancho máximo del contenedor */
+    text-align: center;
+}
+
+.inicioSesion {
+    height: 330px; /* Altura diferente para inicioSesion */
+}
+
+/*INTERIOR (LABELS E INPUTS)*/
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: flex; /* Utilizamos flexbox para alinear elementos */
+    align-items: center; /* Alineamos verticalmente */
+    margin-bottom: 10px; /* Espacio entre cada par de etiqueta y campo de entrada */
+    font-size: 20px; /* Tamaño de fuente personalizado */
+}
+
+label > span {
+    width: 150px; /* Ancho fijo para las etiquetas */
+    text-align: right; /* Alinear texto a la derecha */
+    margin-right: 10px; /* Espacio a la derecha de la etiqueta */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+    width: 100%; /* Ancho completo */
+}
+
+.inicioSesion label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 20px; /* Tamaño de fuente personalizado */
+}
+
+.inicioSesion label > span {
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.inicioSesion input[type="text"],
+.inicioSesion input[type="password"] {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 40px; /* Espacio entre los inputs */
+}
+
+.inicioSesion input[type="submit"] {
+    margin-top: 36px; /* Espacio arriba del botón */
+}
+
+.mensaje {
+	width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    color: red; /* Puedes cambiar el color o añadir otros estilos */
+    font-size: 30px; /* Ajusta el tamaño de la fuente */
+}

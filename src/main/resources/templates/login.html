@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Gymnastic</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/img/Gymnastic_logo.ico}">
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+    <div class="cabecera">
+        <div class="divs_cabecera" id="logo">
+            <a th:href="@{/}">
+                <img id="logoImg" th:src="@{/img/Gymnastic_logo.ico}" alt="Logo empresa">
+            </a>
+            <p class="titulo">GYMNASTIC</p>
+        </div>
+    </div>
+    <div class="cuerpoLogin">
+        <div class="inicioSesion">
+            <form th:action="@{/login}" method="post">
+                <h2>Iniciar Sesión</h2>
+                <label for="username">
+                    <span>Usuario:</span>
+                    <input type="text" id="username" name="username" required>
+                </label>
+                <label for="password">
+                    <span>Contraseña:</span>
+                    <input type="password" name="password" required>
+                </label>
+                <input type="submit" value="Iniciar Sesión">
+                <a th:href="@{/register}"><input type="button" value="Registrate"></a>
+            </form>
+        </div>
+    </div>
+    <footer class="pie">
+        Co Gymnastic <br>
+        correo <br>
+        hola <br>
+        son pruebas
+    </footer>
+</body>
+</html>

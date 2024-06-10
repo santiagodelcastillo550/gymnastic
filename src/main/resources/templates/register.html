@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Gymnastic</title>
+    <link rel="icon" type="image/x-icon" href="img/Gymnastic_logo.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cabecera">
+        <div class="divs_cabecera" id="logo">
+            <a href="index.html"><img id="logoImg" src="img/Gymnastic_logo.ico" alt="Logo empresa"></a>
+            <p class="titulo">GYMNASTIC</p>
+        </div>
+    </div>
+    <div class="cuerpoLogin">
+        <div class="registro">
+            <form action="@{/register}" method="post">
+                <h2>Registro</h2>
+                <label for="nombre"><span>Nombre:</span> <input type="text" id="name" name="nombreUsr" required></label>
+                <label for="apellidos"><span>Apellidos:</span> <input type="text" id="apellidos" name="apellidoUsr" required></label>
+                <label for="email"><span>Correo Electrónico:</span> <input type="text" id="email" name="email" required></label>
+                <label for="fecNacimiento"><span>Fecha Nacimiento:</span> <input type="date" id="fecNacimiento" name="fecNacimiento" required></label>
+                <label for="username"><span>Usuario:</span> <input type="text" id="username" name="username" required></label>
+                <label for="password"><span>Contraseña:</span> <input type="password" name="password" required></label>
+                <input type="submit" value="Registrar">            
+            </form>
+        </div>
+    </div>
+    <footer class="pie">
+        Co Gymnastic <br>
+        correo <br>
+        hola <br>
+        son pruebas
+    </footer>
+</body>
+</html>
