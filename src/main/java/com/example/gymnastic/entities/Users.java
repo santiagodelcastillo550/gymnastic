@@ -1,7 +1,9 @@
 package com.example.gymnastic.entities;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Users {
@@ -10,6 +12,9 @@ public class Users {
 	private String username;
 	private String password;
 	private Boolean enabled;
+	
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private DatosUsuario datosUsuario;
 	
 	public Users() {
 		super();
@@ -35,7 +40,11 @@ public class Users {
 		this.enabled = enabled;
 	}
 	
-	
-	
+	public DatosUsuario getDatosUsuario() {
+        return datosUsuario;
+    }
 
+    public void setDatosUsuario(DatosUsuario datosUsuario) {
+        this.datosUsuario = datosUsuario;
+    }
 }

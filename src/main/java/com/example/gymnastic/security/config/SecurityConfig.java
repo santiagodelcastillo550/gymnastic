@@ -32,13 +32,16 @@ public class SecurityConfig {
 	  throws Exception{ log.info("securityFilterChain");
 	  
 	  http .authorizeHttpRequests(authz -> authz .requestMatchers(HttpMethod.GET,
-	  "/login","/rutinas","/","/style.css", "/img/**",
-	  "/h2-console/**","/register").permitAll() .requestMatchers("/admin/**").hasRole("ADMIN")
-	  //.requestMatchers("/h2-console/**").hasRole("ADMIN")
-	  .anyRequest().authenticated())
+			  			"/login","/rutinas","/","/style.css", "/img/**",
+			  			"/h2-console/**","/register").permitAll() 
+			  .requestMatchers(HttpMethod.POST, "/register").permitAll() // Permitir POST a /register
+			  .requestMatchers("/admin/**").hasRole("ADMIN")
+			  //.requestMatchers("/h2-console/**").hasRole("ADMIN")
+			  .anyRequest().authenticated())
 	  
-	  .formLogin((form) -> form.loginPage("/login") //
-	  .loginProcessingUrl("/login") .failureUrl("/loginError")
+	  .formLogin((form) -> form.loginPage("/login") 
+	  //.loginProcessingUrl("/login") 
+	  .failureUrl("/loginError")
 	  .successForwardUrl("/rutinas").permitAll()); http.logout((logout) ->
 	  logout.permitAll());
 	  
