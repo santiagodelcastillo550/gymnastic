@@ -17,7 +17,7 @@ public class Rutina {
 	private String nombre;
 	private Integer nivel;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "rutina_ejercicios",
 	        joinColumns = @JoinColumn(name="idRutina"),
 	        inverseJoinColumns = @JoinColumn(name="idEjercicio"))

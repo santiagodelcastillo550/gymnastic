@@ -1,17 +1,9 @@
 package com.example.gymnastic.entities;
 
-import java.time.LocalDate;
-import java.util.Date;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.MapsId;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 @Entity
 public class DatosUsuario {
@@ -19,22 +11,23 @@ public class DatosUsuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+	private String username;
     private String nombre;
     private String apellidos;
-    private String email;
+    private String email; 
+   
+	/*
+	 * @Column
+	 * 
+	 * @Temporal(TemporalType.TIMESTAMP) private LocalDate fechaNacimiento;
+	 */
     
-    //@Temporal(TemporalType.DATE)
-    private LocalDate fechaNacimiento;
-    
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "id")
-    private Users user;
+	/*
+	 * @OneToOne private Users user;
+	 */
     
 	public DatosUsuario() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	public Long getId() {
         return id;
@@ -44,7 +37,13 @@ public class DatosUsuario {
         this.id = id;
     }
 
-    public String getNombre() {
+    public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getNombre() {
         return nombre;
     }
 
@@ -68,19 +67,24 @@ public class DatosUsuario {
         this.email = email;
     }
 
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
-    }
+	/*
+	 * public LocalDate getFechaNacimiento() { return fechaNacimiento; }
+	 * 
+	 * public void setFechaNacimiento(LocalDate fechaNacimiento) {
+	 * this.fechaNacimiento = fechaNacimiento; }
+	 */
+	@Override
+	public String toString() {
+		return "DatosUsuario [id=" + id + ", username=" + username + ", nombre=" + nombre + ", apellidos=" + apellidos
+				+ ", email=" + email +  "]";
+	}
 
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public String getUsername() {
-        return this.user.getUsername();
-    }
-
-    public void setUser(Users user) {
-        this.user = user;
-    }
+	/*
+	 * public String getUsername() { return this.user != null ?
+	 * this.user.getUsername() : null; }
+	 * 
+	 * public void setUser(Users user) { this.user = user; }
+	 */
+    
+    
 }

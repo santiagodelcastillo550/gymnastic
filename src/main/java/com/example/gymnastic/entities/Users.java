@@ -1,9 +1,7 @@
 package com.example.gymnastic.entities;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class Users {
@@ -11,14 +9,15 @@ public class Users {
 	@Id
 	private String username;
 	private String password;
-	private Boolean enabled;
+	private Boolean enabled =true;
 	
-	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private DatosUsuario datosUsuario;
+	/*
+	 * @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	 * private DatosUsuario datosUsuario;
+	 */
 	
-	public Users() {
+	public Users() {	
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public String getUsername() {
@@ -39,12 +38,18 @@ public class Users {
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
 	}
-	
-	public DatosUsuario getDatosUsuario() {
-        return datosUsuario;
-    }
 
-    public void setDatosUsuario(DatosUsuario datosUsuario) {
-        this.datosUsuario = datosUsuario;
-    }
+	@Override
+	public String toString() {
+		return "Users [username=" + username + ", password=" + password + ", enabled=" + enabled + "]";
+	}
+	
+	/*
+	 * public DatosUsuario getDatosUsuario() { return datosUsuario; }
+	 * 
+	 * public void setDatosUsuario(DatosUsuario datosUsuario) { this.datosUsuario =
+	 * datosUsuario; datosUsuario.setUser(this); }
+	 */
+	
+	
 }

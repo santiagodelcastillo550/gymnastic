@@ -10,8 +10,7 @@ public class Authorities {
 	private String authority;
 	
 	public Authorities() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public String getUsername() {

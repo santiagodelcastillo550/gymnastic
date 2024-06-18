@@ -16,17 +16,13 @@
     </div>
     <div class="cuerpoLogin">
         <div class="registro">
-            <form action="/register" method="post" th:object="${datosUsuario}">
+            <form action="#" th:action="@{/register}" method="post" >
                 <h2>Registro</h2>
-                <label for="nombreUsr"><span>Nombre:</span> <input type="text" id="nombreUsr" th:field="*{nombre}" required></label>
-				<label for="apellidoUsr"><span>Apellidos:</span> <input type="text" id="apellidoUsr" th:field="*{apellidos}" required></label>
-				<label for="email"><span>Correo Electrónico:</span> <input type="email" id="email" th:field="*{email}" required></label>
-				<label for="fechaNacimiento">
-    				<span>Fecha Nacimiento:</span>
-    				<input type="date" id="fechaNacimiento" th:field="*{fechaNacimiento}" required>
-				</label>
-				<label for="username"><span>Usuario:</span> <input type="text" id="username" th:field="*{username}" required></label>
-				<label for="password"><span>Contraseña:</span> <input type="password" id="password" th:field="*{password}" required></label>
+                <label for="username"><span>Usuario:</span> <input type="text" id="username" name="username" required></label>
+				<label for="password"><span>Contraseña:</span> <input type="password" id="password" name="password" required></label>
+				<label for="nombreUsr"><span>Nombre:</span> <input type="text" id="nombre" name="nombre" required></label>
+				<label for="apellidoUsr"><span>Apellidos:</span> <input type="text" id="apellidos" name="apellidos" required></label>
+				<label for="email"><span>Correo Electrónico:</span> <input type="email" id="email" name="email" required></label>
 				<input type="submit" value="Registrar">            
             </form>
             <div th:if="${message}" class="mensaje">

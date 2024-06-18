@@ -716,3 +716,11 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Mañana
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
 	... 64 more
+2024-06-17 14:19:00.489598+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'h' (DATOS_USUARIO: ""ID"" BIGINT NOT NULL)"
+Data conversion error converting "'h' (DATOS_USUARIO: ""ID"" BIGINT NOT NULL)"; SQL statement:
+DELETE FROM USERS WHERE USERNAME='h' [22018-224]
+2024-06-17 14:23:50.325538+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "O" no encontrada
+Table "O" not found; SQL statement:
+SELECT * FROM O USERS [42102-224]

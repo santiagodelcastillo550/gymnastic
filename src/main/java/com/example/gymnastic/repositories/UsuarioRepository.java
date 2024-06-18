@@ -11,8 +11,9 @@ import jakarta.transaction.Transactional;
 
 public interface UsuarioRepository extends JpaRepository<Users, String>{
 
-	@Transactional
-	@Modifying
-	@Query(value = "INSERT INTO users (username, password, enabled) VALUES (:username, :password, :enabled)", nativeQuery = true)
-	void insertUser(@Param("username") String username, @Param("password") String password, @Param("enabled") boolean enabled);
+//	@Transactional
+//	@Modifying
+//	@Query(value = "INSERT INTO users (username, password, enabled) VALUES (:username, :password, :enabled)", nativeQuery = true)
+//	void insertUser(@Param("username") String username, @Param("password") String password, @Param("enabled") boolean enabled);
+
 }
