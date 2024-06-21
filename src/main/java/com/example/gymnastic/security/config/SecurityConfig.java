@@ -3,19 +3,18 @@ import javax.sql.DataSource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 
 
@@ -24,9 +23,12 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 	Logger log = LoggerFactory.getLogger(SecurityConfig.class);
 	
+	@Autowired
+	private AuthenticationSuccessHandler success;
 	
 	  @Bean public UserDetailsManager userDetailsService(DataSource dataSource) {
 	  return new JdbcUserDetailsManager(dataSource); }
+	  
 	  
 	  @Bean public SecurityFilterChain securityFilterChain(HttpSecurity http)
 	  throws Exception{ log.info("securityFilterChain");
@@ -36,14 +38,15 @@ public class SecurityConfig {
 			  			"/h2-console/**","/register").permitAll() 
 			  .requestMatchers(HttpMethod.POST, "/register").permitAll() // Permitir POST a /register
 			  .requestMatchers("/admin/**").hasRole("ADMIN")
-			  //.requestMatchers("/h2-console/**").hasRole("ADMIN")
+			  .requestMatchers("/favoritas").authenticated() // Acceso a /favoritas solo para usuarios autenticados
 			  .anyRequest().authenticated())
 	  
-	  .formLogin((form) -> form.loginPage("/login") 
-	  //.loginProcessingUrl("/login") 
-	  .failureUrl("/loginError")
-	  .successForwardUrl("/rutinas").permitAll()); http.logout((logout) ->
-	  logout.permitAll());
+	  .formLogin((form) -> form.loginPage("/login")
+			  .successHandler(success)
+			  .failureUrl("/loginError")
+			  //.successForwardUrl("/rutinas")
+			  .permitAll()); http.logout((logout) ->
+			  logout.permitAll());
 	  
 	  http.csrf(csrf -> csrf.ignoringRequestMatchers("/h2-console/**"));
 	  http.headers(headers -> headers.frameOptions().sameOrigin()); return
@@ -52,8 +55,4 @@ public class SecurityConfig {
 	  
 	  @Bean public PasswordEncoder passwordEncoder() { return new
 	  BCryptPasswordEncoder(); }
-	  
-	 /* @Bean public DataSource dataSource() { return new EmbeddedDatabaseBuilder()
-	  .setType(EmbeddedDatabaseType.H2).build(); }*/
-	 
 }

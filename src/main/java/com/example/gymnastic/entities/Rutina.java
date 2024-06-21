@@ -24,8 +24,7 @@ public class Rutina {
 	private Set<Ejercicio> ejercicios;
 	
 	public Rutina() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	public int getId() {
@@ -55,23 +54,4 @@ public class Rutina {
 	public void setEjercicios(Set<Ejercicio> ejercicios) {
 		this.ejercicios = ejercicios;
 	}
-
-//	@Override
-//	public int hashCode() {
-//		return Objects.hash(id, nivel);
-//	}
-//
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		Rutina other = (Rutina) obj;
-//		return id == other.id && Objects.equals(nivel, other.nivel);
-//	}
-	
-	
 }

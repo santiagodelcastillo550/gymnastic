@@ -10,12 +10,7 @@ public class Users {
 	private String username;
 	private String password;
 	private Boolean enabled =true;
-	
-	/*
-	 * @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-	 * private DatosUsuario datosUsuario;
-	 */
-	
+
 	public Users() {	
 		super();
 	}
@@ -43,13 +38,4 @@ public class Users {
 	public String toString() {
 		return "Users [username=" + username + ", password=" + password + ", enabled=" + enabled + "]";
 	}
-	
-	/*
-	 * public DatosUsuario getDatosUsuario() { return datosUsuario; }
-	 * 
-	 * public void setDatosUsuario(DatosUsuario datosUsuario) { this.datosUsuario =
-	 * datosUsuario; datosUsuario.setUser(this); }
-	 */
-	
-	
 }

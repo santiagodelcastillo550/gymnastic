@@ -32,17 +32,13 @@
     <!-- CUERPO -->
     <div class="contenedorPrincipalRutinas">
         <div class="cuerpoRutina">
-            <div class="rutina" th:each="rutina : ${rutinas}">
+            <div class="rutina" th:each="rutina : ${favoritas}">
                 <div id="info">
                     <div class="logoRutina">
                         <img id="logoRutina" th:src="@{https://img.icons8.com/nolan/64/barbell.png}" alt="Logo rutina">
                     </div>
                     <div class="tituloRutina">
                         <span th:text="${rutina.nombre}"></span>
-                    </div>
-                    <div class="checkbox-container">
-                    	<input type="checkbox" id="favorita" th:checked="${rutina.mcaFavorita}">
-                        <label for="favorita">Favorita</label>
                     </div>
                 </div>
                 <p>Nivel: <span th:text="${rutina.nivel}"></span></p>

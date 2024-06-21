@@ -1,26 +1,37 @@
 package com.example.gymnastic.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class RutinasUsuario {
 
 	@Id
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private boolean mcaFavorita;
-	private int idUsuario;
-	private int idRutina;
+	
+	
+	@ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private DatosUsuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "idRutina")
+    private Rutina rutina;
 	
 	public RutinasUsuario() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public boolean isMcaFavorita() {
@@ -30,19 +41,23 @@ public class RutinasUsuario {
 		this.mcaFavorita = mcaFavorita;
 	}
 
-	public int getIdUsuario() {
-		return idUsuario;
+	public DatosUsuario getUsuario() {
+		if(usuario==null) usuario = new DatosUsuario();
+		return usuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setUsuario(DatosUsuario usuario) {
+		this.usuario = usuario;
 	}
 
-	public int getIdRutina() {
-		return idRutina;
+	public Rutina getRutina() {
+		if(rutina==null) rutina = new Rutina();
+		return rutina;
 	}
 
-	public void setIdRutina(int idRutina) {
-		this.idRutina = idRutina;
+	public void setRutina(Rutina rutina) {
+		this.rutina = rutina;
 	}
+
+	
 }

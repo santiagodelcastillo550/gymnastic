@@ -28,18 +28,20 @@ public class ServicioUsuario {
 
 	@Autowired
 	private AuthoritiesRepository authoritiesRepository;
+	
+	public DatosUsuario  getDatosUsuario(String username) throws Exception{
+		log.info("getDatosUsuario");
+		log.debug("username:"+ username);
+		DatosUsuario usuario = datosUsuarioRepository.findDatosUsuarioByUsername(username);
+		return usuario;
+	}
 
 	@Transactional
 	public void registerUser(Users user, DatosUsuario datosUsuario) throws Exception {
 		log.info("registerUser");
 		log.debug("user:", user);
 		log.debug("datosUsuario:", datosUsuario);
-		// Vincular usuarios con DatosUsuarios
-		// users.setDatosUsuario(datosUsuario);
-		// datosUsuario.setUser(users);
 		try {
-			// Guardar el usuario (se guarda también datosUsuario por cascade =
-			// CascadeType.ALL)
 			user.setPassword(passwordEncoder().encode(user.getPassword()));
 			usuarioRepository.save(user);
 
@@ -52,8 +54,6 @@ public class ServicioUsuario {
 			authoritiesRepository.save(authorities);
 
 			log.debug("authorities:", authorities);
-
-			// datosUsuario.setUsername(user.getUsername());
 
 			datosUsuarioRepository.save(datosUsuario);
 
