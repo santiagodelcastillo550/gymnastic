@@ -35,8 +35,10 @@ public class FavoritasController {
 		 	log.info("mostrarPaginaFavoritas:");
 		 	DatosUsuario usuario = (DatosUsuario) session.getAttribute("usuario");
 		 	log.info("DatosUsuario:"+ usuario.toString());
+		 	
 	        List<RutinasUsuario> favoritas = servicioRu.obtenerRutinasFavoritas(usuario.getId());
-	        model.addAttribute("favoritas", favoritas);
+	        
+	        model.addAttribute("favoritas", servicioRu.obtenerRutinasFavoritas(usuario.getId()));
 	        return "favoritas";
 	    }
 
@@ -45,6 +47,7 @@ public class FavoritasController {
 	    	log.info("marcarComoFavorita:");
 	    	DatosUsuario usuario = (DatosUsuario) session.getAttribute("usuario");
 		 	log.info("DatosUsuario:"+ usuario.toString());
+		 	
 	    	servicioRu.marcarComoFavorita(usuario.getId(), idRutina);
 	        return "redirect:/rutinas";
 	    }
