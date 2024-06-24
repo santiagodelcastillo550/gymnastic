@@ -32,18 +32,18 @@
     <!-- CUERPO -->
     <div class="contenedorPrincipalRutinas">
         <div class="cuerpoRutina">
-            <div class="rutina" th:each="rutina : ${favoritas}">
+            <div class="rutina" th:each="rutinaUsuario  : ${favoritas}">
                 <div id="info">
                     <div class="logoRutina">
                         <img id="logoRutina" th:src="@{https://img.icons8.com/nolan/64/barbell.png}" alt="Logo rutina">
                     </div>
                     <div class="tituloRutina">
-                        <span th:text="${rutina.nombre}"></span>
+                        <span th:text="${rutinaUsuario.rutina.nombre}"></span>
                     </div>
                 </div>
-                <p>Nivel: <span th:text="${rutina.nivel}"></span></p>
+                <p>Nivel: <span th:text="${rutinaUsuario.rutina.nivel}"></span></p>
                 <ul>
-                    <li th:each="ejercicio : ${rutina.ejercicios}">
+                    <li th:each="ejercicio : ${rutinaUsuario.rutina.ejercicios}">
                         <span th:text="${ejercicio.nombre}"></span>
                     </li>
                 </ul>

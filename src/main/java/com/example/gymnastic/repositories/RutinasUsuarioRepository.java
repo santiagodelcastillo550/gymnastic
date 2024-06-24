@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.example.gymnastic.entities.RutinasUsuario;
 
-public interface RutinasUsuarioRepository extends JpaRepository<RutinasUsuario, Integer>{
+public interface RutinasUsuarioRepository extends JpaRepository<RutinasUsuario, Long>{
 
 	@Query("SELECT ru FROM RutinasUsuario ru WHERE ru.usuario.id = :idUsuario")
     List<RutinasUsuario> findByIdUsuario(@Param("idUsuario") Long idUsuario);

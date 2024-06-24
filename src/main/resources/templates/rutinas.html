@@ -41,11 +41,11 @@
                         <span th:text="${rutina.nombre}"></span>
                     </div>
                     <div class="checkbox-container">
-<!--                     	<form th:action="@{'/rutina/'+${rutina.id}+'/favorita'}" method="post"> -->
+                    	<form th:action="@{'/rutina/'+${rutina.id}+'/favorita'}" method="post">
+                    		<input type="submit" value="Marcar como Favorita">
 <!-- 	                	<input type="checkbox" id="favorita_${rutina.id}"  onclick="this.form.submit()"> -->
 <!-- 	                	<label for="favorita_${rutina.id}">Favorita</label> -->
-						<a th:href="@{'/rutina/'+${rutina.id}+'/favorita'}" class="favorita-link">Marcar como Favorita</a>
-	            </form>
+	            		</form>
                     </div>
                 </div>
                 <p>Nivel: <span th:text="${rutina.nivel}"></span></p>
