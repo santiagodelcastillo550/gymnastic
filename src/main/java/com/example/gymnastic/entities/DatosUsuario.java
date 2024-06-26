@@ -15,17 +15,7 @@ public class DatosUsuario {
     private String nombre;
     private String apellidos;
     private String email; 
-   
-	/*
-	 * @Column
-	 * 
-	 * @Temporal(TemporalType.TIMESTAMP) private LocalDate fechaNacimiento;
-	 */
-    
-	/*
-	 * @OneToOne private Users user;
-	 */
-    
+
 	public DatosUsuario() {
 		
 	}
@@ -66,25 +56,11 @@ public class DatosUsuario {
     public void setEmail(String email) {
         this.email = email;
     }
-
-	/*
-	 * public LocalDate getFechaNacimiento() { return fechaNacimiento; }
-	 * 
-	 * public void setFechaNacimiento(LocalDate fechaNacimiento) {
-	 * this.fechaNacimiento = fechaNacimiento; }
-	 */
+    
 	@Override
 	public String toString() {
 		return "DatosUsuario [id=" + id + ", username=" + username + ", nombre=" + nombre + ", apellidos=" + apellidos
 				+ ", email=" + email +  "]";
 	}
 
-	/*
-	 * public String getUsername() { return this.user != null ?
-	 * this.user.getUsername() : null; }
-	 * 
-	 * public void setUser(Users user) { this.user = user; }
-	 */
-    
-    
 }

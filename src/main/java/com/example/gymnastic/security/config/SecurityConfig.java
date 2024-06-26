@@ -35,7 +35,7 @@ public class SecurityConfig {
 	  
 	  http .authorizeHttpRequests(authz -> authz .requestMatchers(HttpMethod.GET,
 			  			"/login","/rutinas","/","/style.css", "/img/**",
-			  			"/h2-console/**","/register","/favoritas","/rutina/*/favorita").permitAll() 
+			  			"/h2-console/**","/register","/rutina/*/favorita").permitAll() 
 			  .requestMatchers(HttpMethod.POST, "/register").permitAll() // Permitir POST a /register
 			  .requestMatchers("/admin/**").hasRole("ADMIN")
 			  .requestMatchers("/favoritas").authenticated() // Acceso a /favoritas solo para usuarios autenticados
