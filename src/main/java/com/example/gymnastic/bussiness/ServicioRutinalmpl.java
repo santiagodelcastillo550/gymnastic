@@ -92,22 +92,26 @@ public class ServicioRutinalmpl implements ServicioRutina{
 	 
 	 public void mostrarEjercicios() throws ServicioException {
 		 log.info("mostrarEjercicios");
-	        // Método que añade los ejercicios a las rutinas
-		 	// RUTINA ESPALDA/BICEPS
-	        agregarEjerciciosARutina(1, Arrays.asList(1, 2, 3, 4, 9, 11));
-	        agregarEjerciciosARutina(2, Arrays.asList(5, 2, 3, 4, 7, 13));
-	        agregarEjerciciosARutina(3, Arrays.asList(6, 3, 2, 8, 10, 12));
-	        // RUTINA PECHO/HOMBRO 
-	        agregarEjerciciosARutina(4, Arrays.asList(14, 15, 21, 23, 20));
-	        agregarEjerciciosARutina(5, Arrays.asList(16, 17, 22, 24, 20, 19));
-	        agregarEjerciciosARutina(6, Arrays.asList(16, 18, 22, 24, 20, 19));
-	        // RUTINA PIERNA
-	        agregarEjerciciosARutina(7, Arrays.asList(25, 28, 29, 26, 30));
-	        agregarEjerciciosARutina(8, Arrays.asList(28, 29, 27, 25, 30, 31));
-	        agregarEjerciciosARutina(9, Arrays.asList(28, 29, 27, 32, 30, 31));
-	        // RUTINA GLUTEO
-	        agregarEjerciciosARutina(10, Arrays.asList(33, 34, 40, 36, 37));
-	        agregarEjerciciosARutina(11, Arrays.asList(33, 35, 40, 36, 37, 39));
-	        agregarEjerciciosARutina(12, Arrays.asList(33, 35, 38, 36, 37, 39));
+	        try {
+				// RUTINA ESPALDA/BICEPS
+				agregarEjerciciosARutina(1, Arrays.asList(1, 2, 3, 4, 9, 11));
+				agregarEjerciciosARutina(2, Arrays.asList(5, 2, 3, 4, 7, 13));
+				agregarEjerciciosARutina(3, Arrays.asList(6, 3, 2, 8, 10, 12));
+				// RUTINA PECHO/HOMBRO 
+				agregarEjerciciosARutina(4, Arrays.asList(14, 15, 21, 23, 20));
+				agregarEjerciciosARutina(5, Arrays.asList(16, 17, 22, 24, 20, 19));
+				agregarEjerciciosARutina(6, Arrays.asList(16, 18, 22, 24, 20, 19));
+				// RUTINA PIERNA
+				agregarEjerciciosARutina(7, Arrays.asList(25, 28, 29, 26, 30));
+				agregarEjerciciosARutina(8, Arrays.asList(28, 29, 27, 25, 30, 31));
+				agregarEjerciciosARutina(9, Arrays.asList(28, 29, 27, 32, 30, 31));
+				// RUTINA GLUTEO
+				agregarEjerciciosARutina(10, Arrays.asList(33, 34, 40, 36, 37));
+				agregarEjerciciosARutina(11, Arrays.asList(33, 35, 40, 36, 37, 39));
+				agregarEjerciciosARutina(12, Arrays.asList(33, 35, 38, 36, 37, 39));
+			} catch (ServicioException e) {
+				log.error("Error al mostrar ejercicios: " + e.getMessage());
+				throw new ServicioException("Error al mostrar ejercicios");
+			}
 	    }
 }

@@ -9,7 +9,6 @@ import com.example.gymnastic.entities.Rutina;
 public interface ServicioRutina {
 
 	List<Rutina> listRutinas() throws ServicioException;
-	//List<RutinaWeb> listaRutinas() throws ServicioException;
 	Rutina conseguirRutina(Integer idRutina) throws ServicioException;
 	
 	Rutina grabarRutina(Rutina rutina) throws ServicioException;

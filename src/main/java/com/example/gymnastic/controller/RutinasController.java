@@ -13,8 +13,6 @@ import com.example.gymnastic.bussiness.ServicioRutinalmpl;
 import com.example.gymnastic.common.exceptions.ServicioException;
 import com.example.gymnastic.entities.Rutina;
 
-import jakarta.servlet.http.HttpSession;
-
 @Controller
 public class RutinasController {
 	Logger log = LoggerFactory.getLogger(RutinasController.class);
