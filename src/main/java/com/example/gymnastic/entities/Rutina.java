@@ -27,6 +27,11 @@ public class Rutina {
 
 	}
 	
+	public Rutina(Integer id) {
+		this.id=id;
+
+	}
+	
 	public int getId() {
 		return id;
 	}
