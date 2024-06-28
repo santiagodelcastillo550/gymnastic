@@ -42,8 +42,7 @@
                     </div>
                     <div class="checkbox-container">
                     	<form th:action="@{'/rutina/'+${rutina.id}+'/favorita'}" method="post">
-<!--                    		<input type="submit" value="Marcar como Favorita">-->
- 	                	<input type="checkbox" id="favorita_${rutina.id}"  onclick="this.form.submit()"> 
+ 	                	<input type="checkbox" id="favorita_${rutina.id}" onclick="this.form.submit()"> 
  	                	<label for="favorita_${rutina.id}">Favorita</label> 
 	            		</form>
                     </div>

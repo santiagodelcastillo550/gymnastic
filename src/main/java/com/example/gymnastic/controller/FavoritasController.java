@@ -38,7 +38,7 @@ public class FavoritasController {
 		 	
 	        List<RutinasUsuario> favoritas = servicioRu.obtenerRutinasFavoritas(usuario.getId());
 	        
-	        model.addAttribute("favoritas", servicioRu.obtenerRutinasFavoritas(usuario.getId()));
+	        model.addAttribute("favoritas", favoritas);
 	        return "favoritas";
 	    }
 

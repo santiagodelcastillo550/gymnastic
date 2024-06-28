@@ -40,6 +40,12 @@
                     <div class="tituloRutina">
                         <span th:text="${rutinaUsuario.rutina.nombre}"></span>
                     </div>
+                    <div class="checkbox-container">
+	                    <form th:action="@{'/rutina/'+${rutinaUsuario.rutina.id}+'/favorita'}" method="post">
+			            <input type="checkbox" id="favorita_${rutinaUsuario.rutina.id}" th:checked="${rutinaUsuario.mcaFavorita}" onclick="this.form.submit()">
+			            <label for="favorita_${rutinaUsuario.rutina.id}">Favorita</label>
+			        	</form>
+			        </div>
                 </div>
                 <p>Nivel: <span th:text="${rutinaUsuario.rutina.nivel}"></span></p>
                 <ul>
