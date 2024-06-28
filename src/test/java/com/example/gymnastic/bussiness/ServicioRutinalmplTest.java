@@ -17,6 +17,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.gymnastic.common.exceptions.ServicioException;
 import com.example.gymnastic.entities.Ejercicio;
@@ -24,6 +25,7 @@ import com.example.gymnastic.entities.Rutina;
 import com.example.gymnastic.repositories.EjercicioRepository;
 import com.example.gymnastic.repositories.RutinaRepository;
 
+@SpringBootTest
 public class ServicioRutinalmplTest {
 
 	@Mock

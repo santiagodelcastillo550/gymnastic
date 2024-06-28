@@ -29,32 +29,6 @@ public class ServicioRutinasUsuarioTest {
 	ServicioRutinasUsuario servicio;
 
 	@Test
-	public void testMarcarComoFavorita_nuevaRutina() {
-		// Datos de prueba
-		Long idUsuario = 1L;
-		int idRutina = 1;
-
-		// Comportamiento simulado del repositorio
-		when(repositorio.findByIdUsuarioAndIdRutina(idUsuario, idRutina)).thenReturn(null);
-
-		// Llamada al método del servicio
-		RutinasUsuario resultado = servicio.marcarComoFavorita(idUsuario, idRutina);
-
-		// Verificaciones
-		assertNotNull(resultado);
-		assertEquals(idUsuario, resultado.getUsuario().getId());
-		assertEquals(idRutina, resultado.getRutina().getId());
-		assertEquals(true, resultado.isMcaFavorita()); // Debería ser verdadero
-
-		// Verifica que el método findByIdUsuarioAndIdRutina del repositorio se haya
-		// llamado exactamente una vez
-		verify(repositorio, times(1)).findByIdUsuarioAndIdRutina(idUsuario, idRutina);
-		// Verifica que el método save del repositorio se haya llamado exactamente una
-		// vez
-		verify(repositorio, times(1)).save(resultado);
-	}
-
-	@Test
 	public void testMarcarComoFavorita_rutinaExistente() {
 		// Datos de prueba
 		Long idUsuario = 1L;

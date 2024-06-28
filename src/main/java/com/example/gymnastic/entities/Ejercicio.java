@@ -30,10 +30,14 @@ public class Ejercicio {
 	        inverseJoinColumns = @JoinColumn(name="idRutina"))
 	private Set<Rutina> rutinas;
 
-
 	public Ejercicio() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Ejercicio(int id, String nombre) {
+		this.id = id;
+		this.nombre = nombre;
 	}
 
 	public int getId() {
