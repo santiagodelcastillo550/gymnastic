@@ -36,15 +36,14 @@ public class SecurityConfig {
 	  http .authorizeHttpRequests(authz -> authz .requestMatchers(HttpMethod.GET,
 			  			"/login","/rutinas","/","/style.css", "/img/**",
 			  			"/h2-console/**","/register","/rutina/*/favorita").permitAll() 
-			  .requestMatchers(HttpMethod.POST, "/register").permitAll() // Permitir POST a /register
+			  .requestMatchers(HttpMethod.POST, "/register").permitAll()
 			  .requestMatchers("/admin/**").hasRole("ADMIN")
-			  .requestMatchers("/favoritas").authenticated() // Acceso a /favoritas solo para usuarios autenticados
+			  .requestMatchers("/favoritas").authenticated()
 			  .anyRequest().authenticated())
 	  
 	  .formLogin((form) -> form.loginPage("/login")
 			  .successHandler(success)
 			  .failureUrl("/loginError")
-			  //.successForwardUrl("/rutinas")
 			  .permitAll()); http.logout((logout) ->
 			  logout.permitAll());
 	  

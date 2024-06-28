@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido a Gymnastic</title>
+    <title th:text="#{title}"></title>
     <link rel="icon" type="image/x-icon" th:href="@{/img/Gymnastic_logo.ico}">
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
@@ -11,7 +11,7 @@
     <div class="cabecera">
         <div class="divs_cabecera" id="logo">
             <a th:href="@{/index.html}"><img id="logoImg" th:src="@{/img/Gymnastic_logo.ico}" alt="Logo empresa"></a>
-            <p class="titulo">GYMNASTIC</p>
+            <p class="titulo" th:text="#{cabecera}"></p>
         </div>
         <div class="divs_cabecera" id="login">
             <a th:href="@{/login}"><img id="loginImg" th:src="@{/img/login.ico}" alt="Login"></a>
@@ -20,13 +20,13 @@
     <!-- MENU -->
     <nav class="navbar">
         <div class="opciones">
-            <a th:href="@{/index.html}">INICIO</a>
+            <a th:href="@{/index.html}" th:text="#{inicio}"></a>
         </div>
         <div class="opciones">
-            <a th:href="@{/rutinas}">RUTINAS</a>
+            <a th:href="@{/rutinas}" th:text="#{rutinas}"></a>
         </div>
         <div class="opciones">
-            <a th:href="@{/favoritas}">FAVORITAS</a>
+            <a th:href="@{/favoritas}" th:text="#{favoritas}"></a>
         </div>
     </nav>
     <!-- CUERPO -->

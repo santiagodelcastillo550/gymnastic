@@ -33,20 +33,10 @@ public class ServicioRutinalmpl implements ServicioRutina{
 	public List<Rutina> listRutinas() throws ServicioException {
 		log.info("listRutinas()");
 		List<Rutina> rutinas = rutinaRepositorio.findAll();
-//		List<Rutina> rutinasFavoritas = rutinaRepositorio.findRutinasFavoritas();
-//		List<RutinaWeb> rutinasWeb = new ArrayList<RutinaWeb>();	
-//		for(Rutina rutina:rutinas) {
-//			RutinaWeb rutinaWeb = mapeoRutinas(rutina, rutinasFavoritas.contains(rutina));
-//			
-//			rutinasWeb.add(rutinaWeb);
-//		}
-		
 		return rutinas;
 		
 	}
-	
 
-	
 	@Override
 	public Rutina conseguirRutina(Integer idRutina) throws ServicioException {
 		log.info("conseguirRutina");
@@ -71,15 +61,6 @@ public class ServicioRutinalmpl implements ServicioRutina{
 		
 	}
 
-//	private RutinaWeb mapeoRutinas(Rutina rutina, boolean favorita) {
-//		RutinaWeb rutinaWeb = new RutinaWeb();
-//		rutinaWeb.setId(rutina.getId());
-//		rutinaWeb.setNombre(rutina.getNombre());
-//		rutinaWeb.setNivel(rutina.getNivel());
-//		rutinaWeb.setFavorita(favorita);
-//		return rutinaWeb;
-//	}
-	
 	 @Override
 	 public void agregarEjerciciosARutina(Integer idRutina, List<Integer> idsEjercicios) throws ServicioException {
 	     // Optional puede contener un dato o no
