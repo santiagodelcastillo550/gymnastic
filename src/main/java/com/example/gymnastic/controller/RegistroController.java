@@ -23,7 +23,6 @@ public class RegistroController {
 	public String registro(Model model) {
 		log.info("Accediendo a la página de registro");
 		Users users = new Users();
-        //users.setDatosUsuario(new DatosUsuario());
         model.addAttribute("users", users);
 		return "register";
 	}

@@ -1,13 +1,16 @@
 package com.example.gymnastic.entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Rutina {
@@ -27,10 +30,14 @@ public class Rutina {
 
 	}
 	
-	public Rutina(Integer id) {
+	public Rutina(int id) {
 		this.id=id;
-
 	}
+	
+	public Rutina(String nombre, Integer nivel) {
+        this.nombre = nombre;
+        this.nivel = nivel;
+    }
 	
 	public int getId() {
 		return id;
