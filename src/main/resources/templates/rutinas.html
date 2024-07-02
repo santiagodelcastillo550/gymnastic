@@ -8,27 +8,14 @@
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
-    <div class="cabecera">
-        <div class="divs_cabecera" id="logo">
-            <a th:href="@{/index.html}"><img id="logoImg" th:src="@{/img/Gymnastic_logo.ico}" alt="Logo empresa"></a>
-            <p class="titulo" th:text="#{cabecera}"></p>
-        </div>
-        <div class="divs_cabecera" id="login">
-            <a th:href="@{/login}"><img id="loginImg" th:src="@{/img/login.ico}" alt="Login"></a>
-        </div>
-    </div>
-    <!-- MENU -->
-    <nav class="navbar">
-        <div class="opciones">
-            <a th:href="@{/index.html}" th:text="#{inicio}"></a>
-        </div>
-        <div class="opciones">
-            <a th:href="@{/rutinas}" th:text="#{rutinas}"></a>
-        </div>
-        <div class="opciones">
-            <a th:href="@{/favoritas}" th:text="#{favoritas}"></a>
-        </div>
-    </nav>
+	<!-- CABECERA HECHA EN FRAGMENTO -->
+    <div th:replace="/fragments/cabecera :: cabecera"></div>
+    
+
+	<!-- NAV BAR -->
+	<div th:replace="/fragments/navbar :: navbar"></div>
+	
+	
     <!-- CUERPO -->
     <div class="contenedorPrincipalRutinas">
         <div class="cuerpoRutina">
@@ -57,12 +44,7 @@
             </div>
         </div>
     </div>
-    <footer class="pie">
-    	<div>
-        <img width="20" height="20" 
-        	src="https://img.icons8.com/emoji/48/copyright-emoji.png" 
-        	alt="copyright-emoji"/><span>Gymnastic</span>
-        </div>
-    </footer>
+    <!-- FOOTER -->
+	<div th:replace="/fragments/footer :: footer"></div>
 </body>
 </html>

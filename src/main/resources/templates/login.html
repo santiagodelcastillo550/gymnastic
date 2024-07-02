@@ -8,14 +8,10 @@
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
-    <div class="cabecera">
-        <div class="divs_cabecera" id="logo">
-            <a th:href="@{/}">
-                <img id="logoImg" th:src="@{/img/Gymnastic_logo.ico}" alt="Logo empresa">
-            </a>
-            <p class="titulo" th:text="#{cabecera}">GYMNASTIC</p>
-        </div>
-    </div>
+    
+    <!-- CABECERA HECHA EN FRAGMENTO -->
+    <div th:replace="/fragments/cabecera :: cabecera"></div>
+    
     <div class="cuerpoLogin">
         <div class="inicioSesion">
             <form th:action="@{/login}" method="post">
@@ -33,12 +29,7 @@
             </form>
         </div>
     </div>
-    <footer class="pie">
-    	<div>
-        <img width="20" height="20" 
-        	src="https://img.icons8.com/emoji/48/copyright-emoji.png" 
-        	alt="copyright-emoji"/><span>Gymnastic</span>
-        </div>
-    </footer>
+    <!-- FOOTER -->
+	<div th:replace="/fragments/footer :: footer"></div>
 </body>
 </html>

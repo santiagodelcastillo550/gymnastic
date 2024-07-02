@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div class="cabecera" th:fragment="cabecera">
+        <div class="divs_cabecera" id="logo">
+            <a th:href="@{/index.html}"><img id="logoImg" th:src="@{/img/Gymnastic_logo.ico}" alt="Logo empresa"></a>
+            <p class="titulo" th:text="#{cabecera}"></p>
+        </div>
+        <div class="divs_cabecera" id="login">
+            <a th:href="@{/login}"><img id="loginImg" th:src="@{/img/login.ico}" alt="Login"></a>
+        </div>
+    </div>
+</body>
+</html>
