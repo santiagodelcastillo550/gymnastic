@@ -21,11 +21,11 @@
 		<div class="inicioSesion">
 			<form th:action="@{/login}" method="post">
 				<h2 th:text="#{loginError.h2}"></h2>
-				<label for="username"> <span th:text="#{loginError.usuario}"></span> <input
+				<label for="username"><span th:text="#{loginError.usuario}"></span> <input
 					type="text" id="username" name="username" required>
-				</label> <label for="password"> <span>Contraseña:</span> <input
-					type="password" name="password" required>
-				</label> <input type="submit" value="Iniciar Sesión">
+				</label> <label for="password"><span th:text="#{loginError.contraseña}"></span> 
+					<input type="password" name="password" required>
+				</label><input type="submit" value="Iniciar Sesión">
 			</form>
 		</div>
 	</div>

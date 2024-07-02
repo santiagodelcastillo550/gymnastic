@@ -19,10 +19,10 @@
             <form action="#" th:action="@{/register}" method="post" >
                 <h2 th:text="#{register.h2}"></h2>
                 <label for="username"><span th:text="#{register.usuario}"></span> <input type="text" id="username" name="username" required></label>
-				<label for="password"><span>Contraseña:</span> <input type="password" id="password" name="password" required></label>
+				<label for="password"><span th:text="#{register.contraseña}"></span> <input type="password" id="password" name="password" required></label>
 				<label for="nombreUsr"><span th:text="#{register.nombre}"></span> <input type="text" id="nombre" name="nombre" required></label>
-				<label for="apellidoUsr"><span th:text="#{register.apellidos}">Apellidos:</span> <input type="text" id="apellidos" name="apellidos" required></label>
-				<label for="email"><span th:text="#{register.email}"></span> <input type="email" id="email" name="email" required></label>
+				<label for="apellidoUsr"><span th:text="#{register.apellidos}"></span> <input type="text" id="apellidos" name="apellidos" required></label>
+				<label for="email"><span th:text="#{register.email}"></span> <input type="text" id="email" name="email" required></label>
 				<input type="submit" value="Registrar">            
             </form>
             <div th:if="${message}" class="mensaje">
