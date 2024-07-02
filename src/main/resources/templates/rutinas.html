@@ -42,9 +42,9 @@
                     </div>
                     <div class="checkbox-container">
                     	<form th:action="@{'/rutina/'+${rutina.id}+'/favorita'}" method="post">
- 	                	<input type="checkbox" id="favorita_${rutina.id}" onclick="this.form.submit()"> 
- 	                	<label for="favorita_${rutina.id}">Favorita</label> 
-	            		</form>
+				        <button type="submit" id="favorita_${rutina.id}" 
+				        		class="favorite-button">Marcar como Favorita</button>
+				    </form>
                     </div>
                 </div>
                 <p>Nivel: <span th:text="${rutina.nivel}"></span></p>
@@ -58,7 +58,11 @@
         </div>
     </div>
     <footer class="pie">
-        Co Gymnastic <br> correo <br> hola <br> son pruebas
+    	<div>
+        <img width="20" height="20" 
+        	src="https://img.icons8.com/emoji/48/copyright-emoji.png" 
+        	alt="copyright-emoji"/><span>Gymnastic</span>
+        </div>
     </footer>
 </body>
 </html>
