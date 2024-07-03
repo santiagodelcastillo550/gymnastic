@@ -1,6 +1,5 @@
 package com.example.gymnastic.bussiness;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.gymnastic.common.exceptions.ServicioException;
-import com.example.gymnastic.controller.LoginController;
 import com.example.gymnastic.entities.Ejercicio;
 import com.example.gymnastic.entities.Rutina;
 import com.example.gymnastic.repositories.EjercicioRepository;

@@ -57,7 +57,7 @@ public class ServicioUsuario {
 
 			datosUsuarioRepository.save(datosUsuario);
 
-			log.info("Usuario {} registrado con rol ROLE_USER", user.getUsername());
+			
 		} catch (Exception e) {
 			log.error("Error registro", e);
 

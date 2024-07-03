@@ -7,15 +7,14 @@ import static org.mockito.Mockito.verify;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class LoginControllerTest {
-	@Mock
-    private Logger log;
+	Logger log = LoggerFactory.getLogger(LoginControllerTest.class);
 
     @InjectMocks
     private LoginController loginController;
@@ -30,7 +29,7 @@ public class LoginControllerTest {
     public void testIrse() {
         String viewName = loginController.irse();
         assertEquals("index", viewName);
-        verify(log, times(1)).info("irse");
+        verify(log, times(1)).info("Fuera Sesion");
     }
 
     @Test
@@ -44,6 +43,6 @@ public class LoginControllerTest {
     public void testVenirse() {
         String viewName = loginController.venirse();
         assertEquals("login", viewName);
-        verify(log, times(1)).info("venirse");
+        verify(log, times(1)).info("Acceder");
     }
 }

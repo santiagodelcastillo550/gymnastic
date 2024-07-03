@@ -33,12 +33,12 @@ public class SecurityConfig {
 	  @Bean public SecurityFilterChain securityFilterChain(HttpSecurity http)
 	  throws Exception{ log.info("securityFilterChain");
 	  
-	  http .authorizeHttpRequests(authz -> authz .requestMatchers(HttpMethod.GET,
-			  			"/login","/rutinas","/","/style.css", "/img/**",
-			  			"/h2-console/**","/register","/rutina/*/favorita").permitAll() 
-			  .requestMatchers(HttpMethod.POST, "/register").permitAll()
+	  http.authorizeHttpRequests(authz -> authz 
+			  .requestMatchers("/register").permitAll()
+			  .requestMatchers(HttpMethod.GET,
+			  			"/login","/rutinas","/","/index.html","/style.css", "/img/**",
+			  			"/h2-console/**","/rutina/*/favorita").permitAll()			  
 			  .requestMatchers("/admin/**").hasRole("ADMIN")
-			  .requestMatchers("/favoritas").authenticated()
 			  .anyRequest().authenticated())
 	  
 	  .formLogin((form) -> form.loginPage("/login")

@@ -13,22 +13,23 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.ui.Model;
 
 import com.example.gymnastic.bussiness.ServicioUsuario;
 import com.example.gymnastic.entities.DatosUsuario;
 import com.example.gymnastic.entities.Users;
 
+@SpringBootTest
 public class RegistroControllerTest {
-
+	Logger log = LoggerFactory.getLogger(RegistroControllerTest.class);
+	
 	@Mock
     private ServicioUsuario servicioUsuario;
 
     @Mock
     private Model model;
-
-    @Mock
-    private Logger log;
 
     @InjectMocks
     private RegistroController registroController;
@@ -36,13 +37,7 @@ public class RegistroControllerTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-//        registroController = new RegistroController() {
-//            @Override
-//            public Logger getLogger() {
-//                return log;
-//            }
-//        };
-//        registroController.servicioUsuario = servicioUsuario;
+
     }
 
     @Test

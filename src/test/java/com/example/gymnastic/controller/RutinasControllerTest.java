@@ -13,12 +13,14 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.ui.Model;
 
 import com.example.gymnastic.bussiness.ServicioRutinalmpl;
 import com.example.gymnastic.common.exceptions.ServicioException;
 import com.example.gymnastic.entities.Rutina;
 
+@SpringBootTest
 public class RutinasControllerTest {
 
 	@Mock

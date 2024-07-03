@@ -20,21 +20,31 @@ public class ServicioRutinasUsuario {
 	private RutinasUsuarioRepository repositorio;
 	
 	public RutinasUsuario marcarComoFavorita(Long idUsuario, int idRutina) {
+		log.info("marcarComoFavorita");
         RutinasUsuario rutinasUsuario = repositorio.findByIdUsuarioAndIdRutina(idUsuario, idRutina);
-        if (rutinasUsuario == null) {
-            rutinasUsuario = new RutinasUsuario();
-            DatosUsuario usuario = new DatosUsuario();
-            usuario.setId(idUsuario);
-            Rutina rutina = new Rutina();
-            rutina.setId(idRutina);
-            rutinasUsuario.setUsuario(usuario);
-            rutinasUsuario.setRutina(rutina);
-        }
+        if (rutinasUsuario == null) 
+        	rutinasUsuario = crearRutinaUsuario(idUsuario, idRutina);
+       
         rutinasUsuario.setMcaFavorita(!rutinasUsuario.isMcaFavorita());
         return repositorio.save(rutinasUsuario);
     }
+	
 
     public List<RutinasUsuario> obtenerRutinasFavoritas(Long idUsuario) {
+    	log.info("obtenerRutinasFavoritas");
         return repositorio.findFavoritasByIdUsuario(idUsuario);
     }
+    
+    private RutinasUsuario crearRutinaUsuario(Long idUsuario, int idRutina) {
+    	log.debug("crearRutinaUsuario");
+		RutinasUsuario rutinasUsuario;
+		rutinasUsuario = new RutinasUsuario();
+		DatosUsuario usuario = new DatosUsuario();
+		usuario.setId(idUsuario);
+		Rutina rutina = new Rutina();
+		rutina.setId(idRutina);
+		rutinasUsuario.setUsuario(usuario);
+		rutinasUsuario.setRutina(rutina);
+		return rutinasUsuario;
+	}
 }

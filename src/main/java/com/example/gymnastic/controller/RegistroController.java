@@ -22,8 +22,6 @@ public class RegistroController {
 	@GetMapping("/register")
 	public String registro(Model model) {
 		log.info("Accediendo a la página de registro");
-		Users users = new Users();
-        model.addAttribute("users", users);
 		return "register";
 	}
 

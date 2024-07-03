@@ -10,7 +10,7 @@
 <body>
     
     <!-- CABECERA HECHA EN FRAGMENTO -->
-    <div th:replace="/fragments/cabecera :: cabecera"></div>
+    <header th:replace="/fragments/cabecera :: cabecera"></header>
     
     <!-- NAV BAR -->
 	<div th:replace="/fragments/navbar :: navbar"></div>
@@ -29,7 +29,7 @@
                     <div class="checkbox-container">
 	                    <form th:action="@{'/rutina/'+${rutinaUsuario.rutina.id}+'/favorita'}" method="post">
 			            <input type="checkbox" id="favorita_${rutinaUsuario.rutina.id}" th:checked="${rutinaUsuario.mcaFavorita}" onclick="this.form.submit()">
-			            <label for="favorita_${rutinaUsuario.rutina.id}">Favorita</label>
+			            <label for="favorita_${rutinaUsuario.rutina.id}" th:text="#{rutinaUsuario.favorita}">Favorita</label>
 			        	</form>
 			        </div>
                 </div>
@@ -44,6 +44,6 @@
         </div>
     </div>
     <!-- FOOTER -->
-	<div th:replace="/fragments/footer :: footer"></div>
+	<footer th:replace="/fragments/footer :: footer"></footer>
 </body>
 </html>

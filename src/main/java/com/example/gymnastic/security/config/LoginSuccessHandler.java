@@ -32,7 +32,6 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 		HttpSession session = request.getSession();
 		DatosUsuario datosUsuario = null;
 		try {
-			log.info("NOMBRE DEL PRICIPAL:"+authentication.getName());
 			datosUsuario = servicio.getDatosUsuario(authentication.getName());
 			log.info("datosUsuario" + datosUsuario.toString());
 			session.setAttribute("usuario", datosUsuario);
