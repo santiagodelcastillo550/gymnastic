@@ -100,7 +100,3 @@ insert into Ejercicio(id,nombre,parte_muscular,series,repeticiones,descripcion)
 VALUES(39,'Zancadas con Mancuernas','Gluteo',4,10,'Coger dos mancuernas, una con cada mano, e ir dando zancadas bajando a tocar con la rodilla el suelo con la pierna que se queda detrás.');
 insert into Ejercicio(id,nombre,parte_muscular,series,repeticiones,descripcion)
 VALUES(40,'Peso muerto en Máquina','Gluteo',4,12,'Colocate a dos palmos de los agarres, con la espalda recta tirar hacia arriba hasta la altura de tu cintura, aguantar dos segundos bajarla al suelo de nuevo. ');
-
-
-
-insert into Usuario(id,username,password)VALUES(1,'admin','admin')
