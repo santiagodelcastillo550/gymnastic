@@ -32,16 +32,16 @@ Para acceder a la aplicación, después de ejecutarla, tienes q poner este puert
 
 El proyecto está estructurado en paquetes diversos:
 
-- **com.example.gymnastic: Paquete base que añade la clase de arranque de la aplicación.
-- **com.example.gymnastic.bussiness: Paquete encargado de tener los servicios con la lógica de negocio.
-- **com.example.gymnastic.common.exception: Paquete que tiene las excepciones.
-- **com.example.gymnstic.controller: Paquete encargado de tener los controladores y manejo entre templates.
-- **com.example.gymnastic.entities: Paquete que tiene las entidades del proyecto que luego serán las tablas del proyecto.
-- **com.example.gymnastic.repositories: Paquete que tiene los repositorios para interactuar con la base de datos.
-- **com.example.gymnastic.security.config: Paquete que tiene la seguridad del proyecto
-- **src/main/resources/static: Se encarga de guardar imágenes, index y estilos.
-- **src/main/resources/templates/fragments: Se encarga de tener código repetido en fragmentos en común. 
-- **src/main/resources/templates: Se encarga de tener código de las páginas que se muestran en la web.
-- **application.properties: Archivo de configuración principal de Spring Boot.
-- **data.sql: Archivo que tiene dentro datos iniciales que se cargan cuando se ejcuta la aplicación.
-- **src/test/java: Carpeta que contiene los paquetes de los tests.
+- **com.example.gymnastic**: Paquete base que añade la clase de arranque de la aplicación.
+- **com.example.gymnastic.bussiness**: Paquete encargado de tener los servicios con la lógica de negocio.
+- **com.example.gymnastic.common.exception**: Paquete que tiene las excepciones.
+- **com.example.gymnstic.controller**: Paquete encargado de tener los controladores y manejo entre templates.
+- **com.example.gymnastic.entities**: Paquete que tiene las entidades del proyecto que luego serán las tablas del proyecto.
+- **com.example.gymnastic.repositories**: Paquete que tiene los repositorios para interactuar con la base de datos.
+- **com.example.gymnastic.security.config**: Paquete que tiene la seguridad del proyecto
+- **src/main/resources/static**: Se encarga de guardar imágenes, index y estilos.
+- **src/main/resources/templates/fragments**: Se encarga de tener código repetido en fragmentos en común. 
+- **src/main/resources/templates**: Se encarga de tener código de las páginas que se muestran en la web.
+- **application.properties**: Archivo de configuración principal de Spring Boot.
+- **data.sql**: Archivo que tiene dentro datos iniciales que se cargan cuando se ejcuta la aplicación.
+- **src/test/java**: Carpeta que contiene los paquetes de los tests.
