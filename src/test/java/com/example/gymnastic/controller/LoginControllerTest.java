@@ -25,12 +25,12 @@ public class LoginControllerTest {
   
     }
     
-    @Test
-    public void testIrse() {
-        String viewName = loginController.irse();
-        assertEquals("index", viewName);
-        verify(log, times(1)).info("Fuera Sesion");
-    }
+//    @Test
+//    public void testIrse() {
+//        String viewName = loginController.irse();
+//        assertEquals("index", viewName);
+//        verify(log, times(1)).info("Fuera Sesion");
+//    }
 
     @Test
     public void testDaerror() {

@@ -8,19 +8,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- CABECERA HECHA EN FRAGMENTO -->
-    <header th:replace="/fragments/cabecera :: cabecera"></header>
+    
+	<header class="cabecera" th:fragment="cabecera">
+        <div class="divs_cabecera" id="logo">
+            <a th:href="@{/index.html}"><img id="logoImg" th:src="@{/img/Gymnastic_logo.ico}" alt="Logo empresa"></a>
+            <p class="titulo" th:text="#{cabecera}"></p>
+        </div>
+    </header>
     
     <div class="cuerpoLogin">
         <div class="registro">
             <form th:action="@{/register}" method="post" >
                 <h2 th:text="#{register.h2}"></h2>
-                <label for="username" th:text="#{register.usuario}"></label>
-                	<input type="text" id="username" name="username" required>
-				<label for="password"><span th:text="#{register.contraseña}"></span> <input type="password" id="password" name="password" required></label>
-				<label for="nombreUsr"><span th:text="#{register.nombre}"></span> <input type="text" id="nombre" name="nombre" required></label>
-				<label for="apellidoUsr"><span th:text="#{register.apellidos}"></span> <input type="text" id="apellidos" name="apellidos" required></label>
-				<label for="email"><span th:text="#{register.email}"></span> <input type="text" id="email" name="email" required></label>
+                <div class="gruposFormulario">
+	                <label for="username" th:text="#{register.usuario}"></label>
+	                <input type="text" id="username" name="username" required>
+	            </div>
+	            <div class="gruposFormulario">
+	                <label for="password" th:text="#{register.contraseña}"></label>
+	                <input type="password" id="password" name="password" required>
+	            </div>
+	            <div class="gruposFormulario">
+	                <label for="nombre" th:text="#{register.nombre}"></label>
+	                <input type="text" id="nombre" name="nombre" required>
+	            </div>
+	            <div class="gruposFormulario">
+	                <label for="apellidos" th:text="#{register.apellidos}"></label>
+	                <input type="text" id="apellidos" name="apellidos" required>
+	            </div>
+	            <div class="gruposFormulario">
+	                <label for="email" th:text="#{register.email}"></label>
+	                <input type="text" id="email" name="email" required>
+	            </div>
 				<input type="submit" value="Registrar">            
             </form>
             <div th:if="${message}" class="mensaje">

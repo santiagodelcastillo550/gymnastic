@@ -9,21 +9,25 @@
 </head>
 <body>
     
-    <!-- CABECERA HECHA EN FRAGMENTO -->
-    <header th:replace="/fragments/cabecera :: cabecera"></header>
+    <header class="cabecera" th:fragment="cabecera">
+        <div class="divs_cabecera" id="logo">
+            <a th:href="@{/index.html}"><img id="logoImg" th:src="@{/img/Gymnastic_logo.ico}" alt="Logo empresa"></a>
+            <p class="titulo" th:text="#{cabecera}"></p>
+        </div>
+    </header>
     
     <div class="cuerpoLogin">
         <div class="inicioSesion">
             <form th:action="@{/login}" method="post">
                 <h2 th:text="#{login.h2}"></h2>
-                <label for="username">
-                    <span th:text="#{login.usuario}"></span>
-                    <input type="text" id="username" name="username" required>
-                </label>
-                <label for="password">
-                    <span th:text="#{login.contraseña}"></span>
-                    <input type="password" name="password" required>
-                </label>
+                <div class="gruposFormulario">
+	                <label for="username" th:text="#{login.usuario}"></label>
+	                <input type="text" id="username" name="username" required>
+	            </div>
+	            <div class="gruposFormulario">
+	                <label for="password" th:text="#{login.contraseña}"></label>
+	                <input type="password" name="password" required>
+	            </div>
                 <input type="submit" value="Iniciar Sesión">
                 <a th:href="@{/register}"><input type="button" value="Registrate"></a>
             </form>

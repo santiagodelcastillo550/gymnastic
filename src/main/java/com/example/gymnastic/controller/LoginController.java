@@ -12,10 +12,12 @@ public class LoginController {
 	Logger log = LoggerFactory.getLogger(LoginController.class);
 
 	@GetMapping("/logout")
-    public String irse() { // Parametro HttpSession session
-		log.info("Fuera Sesion");
-		//session.removeAttribute("usuario");
-        return "index";
+    public String cerrarSesion(HttpSession session) {
+		log.info("Cerrando sesión");
+		if (session != null) {
+            session.invalidate(); // Invalida la sesión actual
+        }
+        return "redirect:/";
     }
 	@GetMapping("/loginError")
     public String daerror() {
