@@ -9,12 +9,7 @@
 </head>
 <body>
     
-    <header class="cabecera" th:fragment="cabecera">
-        <div class="divs_cabecera" id="logo">
-            <a th:href="@{/index.html}"><img id="logoImg" th:src="@{/img/Gymnastic_logo.ico}" alt="Logo empresa"></a>
-            <p class="titulo" th:text="#{cabecera}"></p>
-        </div>
-    </header>
+    <header th:insert="~{/fragments/cabeceraNoLogin :: cabeceraNoLogin}"></header>
     
     <div class="cuerpoLogin">
         <div class="inicioSesion">
@@ -34,6 +29,6 @@
         </div>
     </div>
     <!-- FOOTER -->
-	<footer th:replace="/fragments/footer :: footer"></footer>
+	<footer th:insert="~{/fragments/footer :: footer}"></footer>
 </body>
 </html>

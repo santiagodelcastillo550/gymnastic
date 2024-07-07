@@ -10,10 +10,10 @@
 <body>
     
     <!-- CABECERA HECHA EN FRAGMENTO -->
-    <header th:replace="/fragments/cabecera :: cabecera"></header>
+    <header th:insert="~{/fragments/cabecera :: cabecera}"></header>
     
     <!-- NAV BAR -->
-	<div th:replace="/fragments/navbar :: navbar"></div>
+	<div th:insert="~{/fragments/navbar :: navbar}"></div>
 
     <!-- CUERPO -->
     <div class="contenedorPrincipalRutinas">
@@ -44,6 +44,6 @@
         </div>
     </div>
     <!-- FOOTER -->
-	<footer th:replace="/fragments/footer :: footer"></footer>
+	<footer th:insert="~{/fragments/footer :: footer}"></footer>
 </body>
 </html>
