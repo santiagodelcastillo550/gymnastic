@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div id="modal" class="modal" th:fragment="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div>
+                <strong>Nombre:</strong>
+                <p id="modal-nombre"></p>
+            </div>
+            <div>
+                <strong>Descripción:</strong>
+                <p id="modal-descripcion"></p>
+            </div>
+            <div>
+                <strong>Series:</strong>
+                <p id="modal-series"></p>
+            </div>
+            <div>
+                <strong>Repeticiones:</strong>
+                <p id="modal-repeticiones"></p>
+            </div>
+            <!-- Botón para cerrar la modal -->
+            <button class="modal-close-button" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+</body>
+</html>

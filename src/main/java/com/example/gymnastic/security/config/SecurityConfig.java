@@ -36,7 +36,7 @@ public class SecurityConfig {
 	  http.authorizeHttpRequests(authz -> authz 
 			  .requestMatchers("/register").permitAll()
 			  .requestMatchers(HttpMethod.GET,
-			  			"/login","/rutinas","/","/index.html","/style.css", "/img/**",
+			  			"/login","/rutinas","/","/index.html","/style.css","/js/**", "/img/**",
 			  			"/h2-console/**","/rutina/*/favorita").permitAll()			  
 			  .requestMatchers("/admin/**").hasRole("ADMIN")
 			  .anyRequest().authenticated())

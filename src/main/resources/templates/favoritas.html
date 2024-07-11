@@ -36,7 +36,9 @@
                 <p>Nivel: <span th:text="${rutinaUsuario.rutina.nivel}"></span></p>
                 <ul>
                     <li th:each="ejercicio : ${rutinaUsuario.rutina.ejercicios}">
-                        <span th:text="${ejercicio.nombre}"></span>
+                        <span th:text="${ejercicio.nombre}" class="ejercicio-nombre"
+                              th:attr="data-descripcion=${ejercicio.descripcion}, data-series=${ejercicio.series}, data-repeticiones=${ejercicio.repeticiones}"
+                              onclick="showModal(this)" onmouseover="indicateHover(this)" onmouseout="removeHover(this)"></span>
                     </li>
                 </ul>
                 
@@ -45,5 +47,11 @@
     </div>
     <!-- FOOTER -->
 	<footer th:insert="~{/fragments/footer :: footer}"></footer>
+	
+	<!-- MODAL -->
+	<div th:insert="~{/fragments/modal :: modal}"></div>
+
+	<!-- Archivo JavaScript -->
+    <script th:src="@{/js/modal.js}"></script>
 </body>
 </html>
