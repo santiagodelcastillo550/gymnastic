@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.gymnastic.bussiness.ServicioRutinalmpl;
 import com.example.gymnastic.common.exceptions.ServicioException;
@@ -30,4 +31,12 @@ public class RutinasController {
 		model.addAttribute("rutinas", rutinas);		 
         return "rutinas";
     }
+	
+	@GetMapping("/buscar")
+    public String buscarRutinas(@RequestParam("nombre") String nombre, Model model) throws ServicioException {
+        log.info("buscarRutinas: " + nombre);
+        List<Rutina> rutinas = servicio.buscarRutinasPorNombre(nombre);
+        model.addAttribute("rutinas", rutinas);
+        return "rutinas";
+	}
 }

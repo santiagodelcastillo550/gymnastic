@@ -11,10 +11,19 @@
 	<!-- CABECERA HECHA EN FRAGMENTO -->
     <header th:insert="~{/fragments/cabecera :: cabecera}"></header>
     
-
 	<!-- NAV BAR -->
 	<div th:insert="~{/fragments/navbar :: navbar}"></div>
 	
+	<!-- Buscador -->
+    <div class="buscador">
+        <form th:action="@{/rutinas/buscar}" method="get">
+            <input type="text" name="nombre" placeholder="Buscar nombre de rutina" required>
+            <button type="submit">
+                <img src="https://img.icons8.com/material-sharp/24/google-web-search.png" alt="Buscar">
+            </button>
+        </form>
+    </div>
+        
 	
     <!-- CUERPO -->
     <div class="contenedorPrincipalRutinas">

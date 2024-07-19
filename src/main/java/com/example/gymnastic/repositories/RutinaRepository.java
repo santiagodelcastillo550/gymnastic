@@ -19,4 +19,7 @@ public interface RutinaRepository extends JpaRepository<Rutina,Integer>{
 	
 	@Query("Select distinct r from Rutina r, RutinasUsuario ru where r.id=ru.rutina.id and ru.mcaFavorita =true")
 	List<Rutina> findRutinasFavoritas();
+	
+	@Query("SELECT r FROM Rutina r WHERE UPPER(r.nombre) LIKE UPPER(CONCAT('%', :nombre, '%'))")
+    List<Rutina> findByNombreRutina(@Param("nombre") String nombre);
 }

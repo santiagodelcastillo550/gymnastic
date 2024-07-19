@@ -112,4 +112,10 @@ public class ServicioRutinalmpl implements ServicioRutina{
 				throw new ServicioException("Error al mostrar ejercicios");
 			}
 	    }
+	 
+	 
+	 public List<Rutina> buscarRutinasPorNombre(String nombre) throws ServicioException {
+	        log.info("buscarRutinasPorNombre");
+	        return rutinaRepositorio.findByNombreRutina(nombre);
+	 }
 }

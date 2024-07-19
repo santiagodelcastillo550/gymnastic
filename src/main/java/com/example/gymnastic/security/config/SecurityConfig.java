@@ -37,7 +37,7 @@ public class SecurityConfig {
 			  .requestMatchers("/register").permitAll()
 			  .requestMatchers(HttpMethod.GET,
 			  			"/login","/rutinas","/","/index.html","/style.css","/js/**", "/img/**",
-			  			"/h2-console/**","/rutina/*/favorita").permitAll()			  
+			  			"/h2-console/**","/rutina/*/favorita", "/rutinas/buscar").permitAll()			  
 			  .requestMatchers("/admin/**").hasRole("ADMIN")
 			  .anyRequest().authenticated())
 	  
