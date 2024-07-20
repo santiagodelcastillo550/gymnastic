@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.gymnastic.bussiness.ServicioRutinalmpl;
 import com.example.gymnastic.bussiness.ServicioRutinasUsuario;
@@ -48,5 +49,17 @@ public class FavoritasController {
 		 	
 	    	servicioRu.marcarComoFavorita(usuario.getId(), idRutina);
 	        return "redirect:/rutinas";
+	    }
+	    
+	    @GetMapping("/favoritas/buscar")
+	    public String buscarRutina(@RequestParam("nombre") String nombre, Model model, HttpSession session) {
+	        log.info("buscarRutina:");
+	        DatosUsuario usuario = (DatosUsuario) session.getAttribute("usuario");
+	        log.info("DatosUsuario:" + usuario.toString());
+
+	        List<RutinasUsuario> resultados = servicioRu.buscarRutinasPorNombre(usuario.getId(), nombre);
+
+	        model.addAttribute("favoritas", resultados);
+	        return "favoritas";
 	    }
 }

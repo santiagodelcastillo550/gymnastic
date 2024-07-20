@@ -35,6 +35,11 @@ public class ServicioRutinasUsuario {
         return repositorio.findFavoritasByIdUsuario(idUsuario);
     }
     
+    public List<RutinasUsuario> buscarRutinasPorNombre(Long idUsuario, String nombre) {
+        log.info("buscarRutinasPorNombre");
+        return repositorio.findByNombreRutinaUsuario(idUsuario, nombre);
+    }
+    
     private RutinasUsuario crearRutinaUsuario(Long idUsuario, int idRutina) {
     	log.debug("crearRutinaUsuario");
 		RutinasUsuario rutinasUsuario;

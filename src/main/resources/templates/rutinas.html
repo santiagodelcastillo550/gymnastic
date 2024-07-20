@@ -1,68 +1,80 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="#{title}"></title>
-    <link rel="icon" type="image/x-icon" th:href="@{/img/Gymnastic_logo.ico}">
-    <link rel="stylesheet" th:href="@{/style.css}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="#{title}"></title>
+<link rel="icon" type="image/x-icon"
+	th:href="@{/img/Gymnastic_logo.ico}">
+<link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
 	<!-- CABECERA HECHA EN FRAGMENTO -->
-    <header th:insert="~{/fragments/cabecera :: cabecera}"></header>
-    
+	<header th:insert="~{/fragments/cabecera :: cabecera}"></header>
+
 	<!-- NAV BAR -->
 	<div th:insert="~{/fragments/navbar :: navbar}"></div>
-	
+
 	<!-- Buscador -->
-    <div class="buscador">
-        <form th:action="@{/rutinas/buscar}" method="get">
-            <input type="text" name="nombre" placeholder="Buscar nombre de rutina" required>
-            <button type="submit">
-                <img src="https://img.icons8.com/material-sharp/24/google-web-search.png" alt="Buscar">
-            </button>
-        </form>
-    </div>
-        
-	
-    <!-- CUERPO -->
-    <div class="contenedorPrincipalRutinas">
-        <div class="cuerpoRutina">
-            <div class="rutina" th:each="rutina : ${rutinas}">
-                <div id="info">
-                    <div class="logoRutina">
-                        <img id="logoRutina" th:src="@{https://img.icons8.com/nolan/64/barbell.png}" alt="Logo rutina">
-                    </div>
-                    <div class="tituloRutina">
-                        <span th:text="${rutina.nombre}"></span>
-                    </div>
-                    <div class="checkbox-container">
-                    	<form th:action="@{'/rutina/'+${rutina.id}+'/favorita'}" method="post">
-				        <button type="submit" id="favorita_${rutina.id}" 
-				        		class="favorite-button">Marcar como Favorita</button>
-				    </form>
-                    </div>
-                </div>
-                <p>Nivel: <span th:text="${rutina.nivel}"></span></p>
-                <ul>
-                    <li th:each="ejercicio : ${rutina.ejercicios}">
-                        <!-- Mostrar ventana modal al hacer clic en el nombre del ejercicio -->
-                        <span th:text="${ejercicio.nombre}" class="ejercicio-nombre"
-                              th:attr="data-descripcion=${ejercicio.descripcion}, data-series=${ejercicio.series}, data-repeticiones=${ejercicio.repeticiones}"
-                              onclick="showModal(this)" onmouseover="indicateHover(this)" onmouseout="removeHover(this)"></span>
-                    </li>
-                </ul>
-                
-            </div>
-        </div>
-    </div>
-    <!-- FOOTER -->
+	<div class="buscador">
+		<form th:action="@{/rutinas/buscar}" method="get">
+			<div class="input-group">
+				<input type="text" name="nombre"
+					placeholder="Buscar nombre de rutina" required>
+				<button type="submit">
+					<img
+						src="https://img.icons8.com/material-sharp/24/google-web-search.png"
+						alt="Buscar">
+				</button>
+			</div>
+		</form>
+	</div>
+
+
+	<!-- CUERPO -->
+	<div class="contenedorPrincipalRutinas">
+		<div class="cuerpoRutina">
+			<div class="rutina" th:each="rutina : ${rutinas}">
+				<div id="info">
+					<div class="logoRutina">
+						<img id="logoRutina"
+							th:src="@{https://img.icons8.com/nolan/64/barbell.png}"
+							alt="Logo rutina">
+					</div>
+					<div class="tituloRutina">
+						<span th:text="${rutina.nombre}"></span>
+					</div>
+					<div class="checkbox-container">
+						<form th:action="@{'/rutina/'+${rutina.id}+'/favorita'}"
+							method="post">
+							<button type="submit" id="favorita_${rutina.id}"
+								class="favorite-button">Marcar como Favorita</button>
+						</form>
+					</div>
+				</div>
+				<p>
+					Nivel: <span th:text="${rutina.nivel}"></span>
+				</p>
+				<ul>
+					<li th:each="ejercicio : ${rutina.ejercicios}">
+						<!-- Mostrar ventana modal al hacer clic en el nombre del ejercicio -->
+						<span th:text="${ejercicio.nombre}" class="ejercicio-nombre"
+						th:attr="data-descripcion=${ejercicio.descripcion}, data-series=${ejercicio.series}, data-repeticiones=${ejercicio.repeticiones}"
+						onclick="showModal(this)" onmouseover="indicateHover(this)"
+						onmouseout="removeHover(this)"></span>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+	<!-- FOOTER -->
 	<footer th:insert="~{/fragments/footer :: footer}"></footer>
-	
+
 	<!-- MODAL -->
 	<div th:insert="~{/fragments/modal :: modal}"></div>
 
-    <!-- Archivo JavaScript -->
-    <script th:src="@{/js/modal.js}"></script>
+	<!-- Archivo JavaScript -->
+	<script th:src="@{/js/modal.js}"></script>
 </body>
 </html>

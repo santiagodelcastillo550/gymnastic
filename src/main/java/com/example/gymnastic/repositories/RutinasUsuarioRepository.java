@@ -19,4 +19,6 @@ public interface RutinasUsuarioRepository extends JpaRepository<RutinasUsuario, 
     @Query("SELECT ru FROM RutinasUsuario ru WHERE ru.usuario.id = :idUsuario AND ru.rutina.id = :idRutina")
     RutinasUsuario findByIdUsuarioAndIdRutina(@Param("idUsuario") Long idUsuario, @Param("idRutina") Integer idRutina);
 
+    @Query("SELECT ru FROM RutinasUsuario ru WHERE ru.usuario.id = :idUsuario AND UPPER(ru.rutina.nombre) LIKE UPPER(CONCAT('%', :nombre, '%'))")
+    List<RutinasUsuario> findByNombreRutinaUsuario(@Param("idUsuario") Long idUsuario, @Param("nombre") String nombre);
 }

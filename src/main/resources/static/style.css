@@ -384,8 +384,8 @@ input[type="submit"] {
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-    margin-left: auto; /* Empuja el contenedor hacia la derecha */
-    margin-right: 0; /* Asegúrate de que no haya margen derecho adicional */
+    margin-left: auto;
+    margin-right: 0;
 }
 
 /* Estilo para el formulario dentro del contenedor */
@@ -395,40 +395,50 @@ input[type="submit"] {
     align-items: center;
 }
 
+/* Nuevo contenedor para el input y el botón */
+.input-group {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
 /* Estilo para el campo de texto */
-.buscador input[type="text"] {
+.input-group input[type="text"] {
     border: none;
     padding: 10px;
     border-radius: 5px 0 0 5px;
-    flex: 1;
+    flex-grow: 1;
     background-color: #333;
     color: white;
     outline: none;
     margin: 0;
     box-sizing: border-box;
+    min-width: 0; /* Asegura que el input no cause overflow */
+    height: 40px; /* Asegura que el input tenga la misma altura que el botón */
 }
 
 /* Estilo para el botón */
-.buscador button {
+.input-group button {
     background-color: orange;
     border: none;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
-    padding: 10px;
+    padding: 0 10px; /* Ajusta el padding horizontal */
     display: flex;
     align-items: center;
-    height: 100%;
-    margin: 0;
+    justify-content: center;
     box-sizing: border-box;
+    height: 40px; /* Asegura que el botón tenga la misma altura que el input */
+    margin: 0;
 }
 
 /* Estilo para la imagen dentro del botón */
-.buscador button img {
+.input-group button img {
     width: 24px;
     height: 24px;
 }
 
 /* Estilo de hover para el botón */
-.buscador button:hover {
+.input-group button:hover {
     background-color: blanchedalmond;
 }
